@@ -1,0 +1,7 @@
+aux_source_directory(. MAIN_SRCS)
+include_directories(${PROJECT_SOURCE_DIR})
+find_package(Ceres REQUIRED)
+include_directories(${PROJECT_SOURCE_DIR} ${EIGEN3_INCLUDE_DIR})
+include_directories(${CERES_INCLUDE_DIRS} )
+add_executable(${PROJECT_NAME} main.cpp BA.h BA.cpp ba_L1_smoothing.h ba_L1_smoothing.cpp )
+target_link_libraries(${PROJECT_NAME} ${CERES_LIBRARIES})
